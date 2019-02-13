@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.MainActivity">
+
+    <Chronometer
+        android:id="@+id/mainTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0"/>
+
+    <com.zp.myhomemanager.ui.views.HomeFaceView
+        android:id="@+id/homeFaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <RelativeLayout
+        android:id="@+id/showInfosBox"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:padding="8dp"
+        android:background="@android:drawable/editbox_background_normal">
+
+        <FrameLayout
+            android:id="@+id/infoFragmentBox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/settingBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/imageButtonSet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        app:srcCompat="@android:drawable/ic_menu_manage" />
+
+        <ImageButton
+            android:id="@+id/imageButtonHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@android:drawable/ic_menu_help" />
+
+    </LinearLayout>
+
+</RelativeLayout>

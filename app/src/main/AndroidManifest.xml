@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zp.myhomemanager">
+
+    <!-- sugar数据库参数 -->
+    <meta-data
+        android:name="DATABASE"
+        android:value="myhomemanager.db" />
+    <meta-data
+        android:name="VERSION"
+        android:value="1" />
+    <meta-data
+        android:name="QUERY_LOG"
+        android:value="false" />
+    <meta-data
+        android:name="DOMAIN_PACKAGE_NAME"
+        android:value="com.zp.myhomemanager.database" />
+    //百度语音权限
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    //屏幕唤醒权限
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    //屏幕解锁权限
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    //息屏权限
+    <uses-permission android:name="android.permission.USES_POLICY_FORCE_LOCK" />
+    //启动service对话框
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <application
+        android:name=".global.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        //百度应用key
+        <meta-data
+            android:name="com.baidu.speech.APP_ID"
+            android:value="14886292" />
+        <meta-data
+            android:name="com.baidu.speech.API_KEY"
+            android:value="U5kUpHyq5zpe56KZXVFjngTC" />
+        <meta-data
+            android:name="com.baidu.speech.SECRET_KEY"
+            android:value="r02tpd53BzhP9MqQkiNvQ3HeVrjXIvfE" />
+        //百度语音识别service
+        <service
+            android:name="com.baidu.speech.VoiceRecognitionService"
+            android:exported="false" />
+        //主服务
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="true" />
+        //息屏广播器
+        <receiver
+            android:name=".screen_off.ScreenOffAdminReceiver"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
+            <meta-data
+                android:name="android.app.device_admin"
+                android:resource="@xml/device_admin" />
+
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".ui.activities.SplashActivity"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.activities.MainActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ui.activities.SetActivity" />
+        <activity
+            android:name=".ui.activities.MainWorkActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ui.activities.MainLifeActivity"
+            android:launchMode="singleTop" />
+        <activity android:name=".ui.activities.BaseActivity" />
+        <activity
+            android:name=".ui.activities.HelpActivity"
+            android:label="@string/title_activity_help"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+    </application>
+
+</manifest>

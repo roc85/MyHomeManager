@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.WeatherFragment">
+
+
+    <TextView
+        android:id="@+id/textViewWeatherTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp"
+        android:layout_margin="10dp"
+        android:text="天气" />
+
+
+    <RelativeLayout
+        android:id="@+id/boxLine"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/textViewWeatherTitle"
+        android:background="@color/colorLine"
+        />
+
+    <RelativeLayout
+        android:id="@+id/nowWeatherBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewWeatherTitle"
+        android:layout_margin="0dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:minHeight="60dp"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/textViewNowW"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="--"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/textViewNowT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewNowW"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:text="--"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/textViewE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/textViewNowW"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="8sp"
+            android:text="环境" />
+
+        <TextView
+            android:id="@+id/textViewI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/textViewNowW"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="8sp"
+            android:gravity="right"
+            android:text="信息" />
+    </RelativeLayout>
+
+    <GridView
+        android:id="@+id/WeatherGridBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/nowWeatherBox"
+        android:layout_centerHorizontal="true"
+        android:numColumns="2"
+        android:horizontalSpacing="1dp"
+        android:verticalSpacing="1dp"
+        />
+
+
+</RelativeLayout>

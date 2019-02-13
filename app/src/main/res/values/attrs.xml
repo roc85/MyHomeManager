@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="WeatherInfoView">
+        <attr name="date_textcolor" format="color"/>
+        <attr name="date_textsize" format="dimension"/>
+        <attr name="date_text" format="string"/>
+
+        <attr name="icon_src" format="reference|integer"/>
+
+        <attr name="info_textcolor" format="color"/>
+        <attr name="info_textsize" format="reference|integer"/>
+        <attr name="info_text" format="string"/>
+
+    </declare-styleable>
+
+</resources>
